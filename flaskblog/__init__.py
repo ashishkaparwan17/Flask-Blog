@@ -6,6 +6,8 @@ from flask_mail import Mail
 import os
 
 app=Flask(__name__)
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 app.config['SECRET_KEY']='4c85940a892c35650238a95ba19dbbe2d1a307dae9379cc96f281d34d810ab9e'
 app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///site.db'
 db=SQLAlchemy(app)
