@@ -1,0 +1,52 @@
+body {    
+  color: #333333;
+}
+.navbar{
+  height: 60px;  
+  background-color: blueviolet;
+}
+.navbar-nav a:hover{
+  border-bottom: 1px solid white;
+}
+.footer a{
+  text-decoration: none;
+}
+.footer a:hover{
+  text-decoration: underline;
+}
+.card-body a{
+  text-decoration: none;
+}
+.card-body a:hover{
+  text-decoration: underline;
+}
+.account-img {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 16px;
+}
+.content-section{
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+}
+.media {
+  padding: 10px 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+.post-img{
+  height: 100px;
+  width: 100px;
+}
+.row{
+  align-items: center;    
+}
+.col-10{
+  border-left: 1px solid #d0d8db;
+}
+.post-title{
+  color: #000000;
+}
+a.post-title:hover{
+  color: blueviolet;
+}

@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block body %}
+{% for post in posts.items %}
+<div class="card my-4">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                <img class='rounded-circle post-img' src="{{url_for('static',filename=post.author.image_file)}}">
+            </div>
+            <div class="col-10">
+                <a href="{{url_for('user_posts',username=post.author.username)}}">{{ post.author.username }}</a>
+                <small class="text-muted">{{ post.date_posted.strftime('%d/%m/%Y') }}</small>
+                <a class="post-title" href="{{url_for('post',post_id=post.id)}}">
+                    <h2>{{post.title}}</h2>
+                </a>
+                <p>{{post.content}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% for page_num in posts.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=2) %}
+{% if page_num %}
+{% if posts.page==page_num %}
+<a class="mb-4 btn btn-primary" href="{{url_for('home',page=page_num)}}">{{page_num}}</a>
+{% else %}
+<a class="mb-4 btn btn-outline-primary" href="{{url_for('home',page=page_num)}}">{{page_num}}</a>
+{% endif %}
+{% else %}
+...
+{% endif %}
+{% endfor %}
+{% endblock body %}
