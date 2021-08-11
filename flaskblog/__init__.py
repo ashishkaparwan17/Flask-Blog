@@ -1,4 +1,3 @@
-import logging
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -20,8 +19,5 @@ app.config['MAIL_USE_SSL']=True
 app.config['MAIL_USERNAME']=os.environ.get('EMAIL_USER')
 app.config['MAIL_PASSWORD']=os.environ.get('EMAIL_PASS')
 mail=Mail(app)
-
-app.logger.addHandler(logging.StreamHandler(os.system.stdout))
-app.logger.setLevel(logging.ERROR)
 
 from flaskblog import routes
